@@ -10,7 +10,7 @@
 --     UserId                 int                );
 -- SET GLOBAL local_infile=1;
 
--- LOAD XML LOCAL INFILE "/Users/sonushah/Downloads/3dprinting.stackexchange.com/Comments.xml" INTO TABLE health_care.comments;
+-- LOAD XML LOCAL INFILE "/Users/syedaman/Downloads/3dprinting.stackexchange.com/Comments.xml" INTO TABLE health_care.comments;
 
 -- select * from health_care.comments;
 use milestone;
@@ -155,36 +155,36 @@ ALTER TABLE Votes ADD CONSTRAINT fk_votes_postid FOREIGN KEY (postid) REFERENCES
 -- LoadData
 
 -- Users
-LOAD XML LOCAL INFILE "/Users/sonushah/Downloads/3dprinting.stackexchange.com/Users.xml" INTO TABLE milestone.Users;
+LOAD XML LOCAL INFILE "/Users/syedaman/Downloads/3dprinting.stackexchange.com/Users.xml" INTO TABLE milestone.Users;
 SELECT count(*) FROM milestone.Users;
 
 -- Badges
-LOAD XML LOCAL INFILE "/Users/sonushah/Downloads/3dprinting.stackexchange.com/Badges.xml" INTO TABLE Badges;
+LOAD XML LOCAL INFILE "/Users/syedaman/Downloads/3dprinting.stackexchange.com/Badges.xml" INTO TABLE Badges;
 SELECT count(*) FROM Badges;
 
 -- Posts
-LOAD XML LOCAL INFILE "/Users/sonushah/Downloads/3dprinting.stackexchange.com/Posts.xml"  INTO TABLE Posts;
+LOAD XML LOCAL INFILE "/Users/syedaman/Downloads/3dprinting.stackexchange.com/Posts.xml"  INTO TABLE Posts;
 SELECT count(*) FROM Posts;
 
 -- Comments
-LOAD XML LOCAL INFILE "/Users/sonushah/Downloads/3dprinting.stackexchange.com/Comments.xml"  INTO TABLE Comments;
+LOAD XML LOCAL INFILE "/Users/syedaman/Downloads/3dprinting.stackexchange.com/Comments.xml"  INTO TABLE Comments;
 SELECT count(*) FROM Comments;
 
 -- PostHistory
-LOAD XML LOCAL INFILE "/Users/sonushah/Downloads/3dprinting.stackexchange.com/PostHistory.xml"  INTO TABLE PostHistory;
+LOAD XML LOCAL INFILE "/Users/syedaman/Downloads/3dprinting.stackexchange.com/PostHistory.xml"  INTO TABLE PostHistory;
 SELECT count(*) FROM PostHistory;
 
 -- Postlinks
-LOAD XML LOCAL INFILE "/Users/sonushah/Downloads/3dprinting.stackexchange.com/PostLinks.xml" INTO TABLE PostLinks;
+LOAD XML LOCAL INFILE "/Users/syedaman/Downloads/3dprinting.stackexchange.com/PostLinks.xml" INTO TABLE PostLinks;
 SELECT count(*) FROM PostLinks;
 
 -- Tags
-LOAD XML LOCAL INFILE "/Users/sonushah/Downloads/3dprinting.stackexchange.com/Tags.xml"  INTO TABLE Tags;
+LOAD XML LOCAL INFILE "/Users/syedaman/Downloads/3dprinting.stackexchange.com/Tags.xml"  INTO TABLE Tags;
 SELECT count(*) FROM Tags;
 
 -- Votes
 
-LOAD XML LOCAL INFILE "/Users/sonushah/Downloads/3dprinting.stackexchange.com/Votes.xml"  INTO TABLE Votes;
+LOAD XML LOCAL INFILE "/Users/syedaman/Downloads/3dprinting.stackexchange.com/Votes.xml"  INTO TABLE Votes;
 SELECT count(*) FROM Votes;
 
 
