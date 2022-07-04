@@ -231,24 +231,25 @@ CREATE INDEX votes_creation_date_idx on Votes(CreationDate) USING btree;
 
 
 
--- Problem 1
+-- Problem 1 Find top 10 users with the highest reputation. Print their id, displayname and reputation. Sort by highest reputation first.
 select Id, DisplayName, Reputation from Users order by Reputation desc LIMIT 10;
 
 
--- Problem 2
+-- Problem 2 Print the text of questions asked by user whose display name is alexandrul. 
 
 
-select u.DisplayName,p.title from Users u , Posts p where u.DisplayName = 'CJK' and u.id=p.OwnerUserId  and p.PostTypeId=1;
+select u.DisplayName,p.title from Users u , Posts p where u.DisplayName = 'alexandrul' and u.id=p.OwnerUserId  and p.PostTypeId=1;
 
--- Problem 3
+-- Problem 3 Print the text of questions asked by user whose display name contains the string “nau”
+
 select u.DisplayName,p.title from Users u , Posts p where u.DisplayName like '%nau%' and u.id=p.OwnerUserId  and p.PostTypeId=1;
 
--- Problem 4
+-- Problem 4 Print the 10 most popular badges, sorted by the number of users who have these badges.
 
 
 select count(*) , b.Name from Badges b join Users u on u.Id = b.UserId group by b.Name order by count(*) desc limit 10;
 
--- Problem 5
+-- Problem 5 For users who have a reputation greater than 75000, print their userid, displayname, reputation and the total number of questions they have asked. 
 
 select u.Id,u.DisplayName,u.reputation,questions_asked.total_no_of_questions_asked
 from Users u join
