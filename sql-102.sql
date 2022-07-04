@@ -1,18 +1,6 @@
--- create database milestone;
+create database milestone;
 
--- DROP TABLE IF EXISTS health_care.comments;
--- CREATE TABLE health_care.comments (
---     Id                     int PRIMARY KEY    ,
--- PostId                 int not NULL       , 
---     Score                  int not NULL       ,
- --    Text                   varchar(1000)               ,
---     CreationDate           timestamp not NULL , 
---     UserId                 int                );
--- SET GLOBAL local_infile=1;
 
--- LOAD XML LOCAL INFILE "/Users/syedaman/Downloads/3dprinting.stackexchange.com/Comments.xml" INTO TABLE health_care.comments;
-
--- select * from health_care.comments;
 use milestone;
 
 -- Badges
@@ -240,9 +228,7 @@ CREATE INDEX votes_type_idx on Votes(VoteTypeId) USING btree;
 CREATE INDEX votes_creation_date_idx on Votes(CreationDate) USING btree;
 
 
-select * from Users where DisplayName = 'CJK';
 
-select * from Posts where OwnerUserId = 11;
 
 
 -- Problem 1
@@ -250,9 +236,7 @@ select Id, DisplayName, Reputation from Users order by Reputation desc LIMIT 10;
 
 
 -- Problem 2
-select * from Users where Displayname like 'Alexandru%';
 
-select Id,DisplayName,Reputation from Users where DisplayName = 'CJK';
 
 select u.DisplayName,p.title from Users u , Posts p where u.DisplayName = 'CJK' and u.id=p.OwnerUserId  and p.PostTypeId=1;
 
@@ -261,7 +245,6 @@ select u.DisplayName,p.title from Users u , Posts p where u.DisplayName like '%n
 
 -- Problem 4
 
-select * from Badges;
 
 select count(*) , b.Name from Badges b join Users u on u.Id = b.UserId group by b.Name order by count(*) desc limit 10;
 
